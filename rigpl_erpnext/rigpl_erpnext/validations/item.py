@@ -79,7 +79,7 @@ def generate_item_code(doc,method):
 				#have use for serial no.
 				if cond1 == "Tool Type":
 					query2 = """SELECT iav.serial, iav.name from `tabItem Attribute Value` iav
-						WHERE iav.parent = 'Tool Type' AND iav.attribute_value= '%s'""" %cond2
+						WHERE  iav.attribute_value= '%s'""" %cond2
 					serial = frappe.db.sql(query2 , as_list=1)
 				
 				abbr.extend(frappe.db.sql(query, as_list=1))
